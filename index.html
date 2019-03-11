@@ -1,13 +1,30 @@
 <html>
 
+  <!--Imports and start ups -->
   <head>
+    <!-- Style -->
     <link rel = "stylesheet" href = "./source/sheets/homeStyle.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <!-- Program Dependencies-->
+    <script src="./source/core/Engine/Main.js"></script>
+    <!-- Script loads and start ups -->
+    <script>
+
+      //From /source/core/Main.js
+      Galacta = new Game();
+      Galacta.start();
+
+    </script>
   </head>
 
+  <!-- HTML elements -->
   <body>
+
+    <!-- Main Page // Will be removed and replaced by canvas once start has been clicked -->
     <h1 id = "head">GALACTA</h1>
     <button id="adventure"> S T A R T </button>
+
   </body>
 
 </html>
