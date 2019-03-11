@@ -1,0 +1,35 @@
+body {
+	background-color: black;
+}
+
+
+#head {
+	text-align: center;
+	color: white;
+	margin-top: 300;
+	font-family: "Roboto", serif;
+	font-size: 40px;
+	position: relative;
+	z-index: 2;
+}
+#adventure {
+	display: block;
+
+	margin: 0 auto;
+
+    border: none;
+    font-size: 24px;
+    margin-top: 2;
+    color: white;
+    background-color: black;
+    position: relative;
+	z-index: 2;
+}
+
+#rainCanv {
+	background: black;
+	margin: 0 auto;
+	position: absolute;
+	top: 0%;
+	z-index: 1;
+}
