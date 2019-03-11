@@ -6,3 +6,22 @@
     - Handle menu loads
     - etc
 **/
+
+
+/**
+  -== CLASS Game ==-
+    -== Details ==-
+      -- the head of the game, will start all child processes such as rendering, model loading etc etc
+      -- Called by Start()
+
+      -== Functions ==-
+        Start()
+        -
+**/
+class Game(){
+
+
+
+
+
+}
