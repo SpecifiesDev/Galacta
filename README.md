@@ -1,1 +1,2 @@
-# Galcata
+# Galacta
+A new world.
