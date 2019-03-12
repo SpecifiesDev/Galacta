@@ -1,9 +1,28 @@
 // Rain.js
+/**
+* -== RAIN ==-
+*		Holds the rain like effect across the main screen
+*
+*	-== Vairables ==-
+*
+*		@variable {setInterval} interval - The rate at which the rain droplets move | 60 FPS
+* 	@variable {array} droplets - holds every living droplet
+* 	@variable {canvas} ctx - the 2D canvas that holds the rain
+*		@variable {int} size - The population size of the rain
+*
+*	-== Functions ==-
+*
+*		@function {void} rainInit - Initializes the canvas dimensions, and sets up interval
+*		@function {void} rainDroplets - Called on every frame, deletes dead droplets / replaces em, and moves the rest
+*
+**/
+
 
 // global var to clearinterval
 var interval;
 
 var droplets = [];
+
 var canvas = document.getElementById("rainCanv");
 var ctx = canvas.getContext("2d");
 
@@ -16,7 +35,9 @@ function rainInit() {
 	ctx.canvas.width = window.innerWidth - 10;
 	ctx.canvas.height = window.innerHeight - 10;
 
-	// Create a variable containing an interval that runs the rain code. We place it in a variable so we can clear the interval whenever the user presses start. Runs at 60 frames.
+	// Create a variable containing an interval that runs the rain code.
+	//We place it in a variable so we can clear the interval whenever the user presses start.
+	//Runs at 60 frames.
 	interval = setInterval(function() {
 		rainDroplets();
 	}, 1000 / 60);
@@ -37,10 +58,14 @@ function rainDroplets() {
 		droplets.push(new Droplet(returnRandom(1, window.innerWidth - 5), returnRandom(1, window.innerHeight - 10), returnRandom(4, 9), 1, window.innerHeight - returnRandom(1, 10), returnRandom(1, 2)));
 	}
 
-	/* First check if the droplet is "dead", basically off of the screen. If it is, we're going to replace it's value with a new droplet that starts between 1,30
-	* Note that in the first class definition, we define within the bounds of the entire window and in the second we define 1,30. This is because we want it to start
+	/*
+	* First check if the droplet is "dead", basically off of the screen. If it is,
+	* we're going to replace it's value with a new droplet that starts between 1,30
+	* Note that in the first class definition, we define within the bounds of the
+	* entire window and in the second we define 1,30. This is because we want it to start
 	* naturally, and then keep spawning from the top. This prevents any gaps.
 	*/
+
 	for(var i = 0; i < size; i++) {
 		var drop = droplets[i];
 
@@ -53,7 +78,7 @@ function rainDroplets() {
 			drop.draw();
 		}
 	}
-	
+
 
 }
 
