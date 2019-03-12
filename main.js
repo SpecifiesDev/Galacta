@@ -11,8 +11,10 @@ var MainWindow = null;
 const CreateWindow = () => {
 
   MainWindow = new BrowserWindow({
-    frame: false,
-    fullscreen: true,
+    frame: true,
+    fullscreen: false,
+    width: 1280,
+    height: 720
   });
 
   MainWindow.loadURL(require('url').format({

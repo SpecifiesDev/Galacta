@@ -1,6 +1,6 @@
 {
-  "name": "Galacta",
-  "version": "1.0",
+  "name": "galacta",
+  "version": "1.0.0",
   "description": "The itch for exploration.",
   "main": "main.js",
   "repository": {
@@ -11,5 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "electron": "^3.1.6"
+  },
+  "scripts": {
+    "start": "electron ."
   }
 }
