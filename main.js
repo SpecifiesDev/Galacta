@@ -11,12 +11,12 @@ var MainWindow = null;
 const CreateWindow = () => {
 
   MainWindow = new BrowserWindow({
-    frame: true,
+    frame: false,
     fullscreen: true
   });
 
   MainWindow.loadURL(require('url').format({
-    pathname: path.join(__dirname, 'index.html'), 
+    pathname: path.join(__dirname, 'index.html'),
     protocol: 'file:',
     slashes: true
   }));

@@ -10,6 +10,9 @@
     <canvas id = "rainCanv"></canvas>
     <!-- Program Dependencies-->
 
+    <!-- Utility file -->
+    <script src = "./source/core/Utils.js"></script>
+
     <!--GameState enum -->
     <script src = "./source/core/GameState.js"></script>
 
@@ -22,11 +25,16 @@
     <!-- Main game Engige -->
     <script src="./source/core/Main.js"></script>
     <!-- Script loads and start ups -->
+
+    <!-- Rain song audio -->
+    <audio src = "./source/core/resources/audio/homescreen.mp3" id = "rainAudio"></audio>
     <script>
 
-      //From /source/core/Main.js
-      Galacta = new Game();
-      Galacta.init();
+      // When our content loads, we initiate the game
+      document.addEventListener("DOMContentLoaded", function() {
+        Galacta = new Game();
+        Galacta.init();
+      })
 
     </script>
   </head>
@@ -38,7 +46,11 @@
     <h1 id = "head">GALACTA</h1>
     <button id="adventure"> S T A R T </button>
 
-  
+
+
+
+
+
   </body>
 
 </html>

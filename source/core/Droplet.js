@@ -2,7 +2,7 @@
 class Droplet {
 
 	// Construct a new droplet with starting x / y, a rate of fall, density, deathHeight, and sway chance.
-	constructor(startx, starty, rate, density, deathHeight, sway) {
+	constructor(startx, starty, rate, density, deathHeight) {
 		this.x = startx;
 		this.y = starty;
 		this.v = rate;
@@ -10,8 +10,15 @@ class Droplet {
 		this.isDead = false;
 		this.dh = deathHeight;
 
-		// 80% chance for droplet to have sway
-		if(sway = 2){
+		// Change the chance to just compute locally, and compute by a decimal.
+		var chance = Math.random();
+
+		/* If the value exceends / = 80, the droplet initializes with swaying.
+		*	The real reason we add a chance is to try and create a natural effect.
+		* If all of them sway, or too many sway, the regression is noticable.
+		* By adding chance we creating a "wind" effect without overdoing the swaying.
+		*/
+		if(chance >= .80){
 			this.r = 0;
 			this.sway = true;
 		} else {
@@ -25,7 +32,7 @@ class Droplet {
 	update() {
 		this.y += this.v;
 
-		// Sways the rain back and forth if it is a droplet that has that ability
+		// Use sine regression to alternate the position of a droplet. Creates a way effect.
 		if(this.sway == true){
 			this.x += Math.sin(this.r * (1/8));
 			this.r += Math.PI / 6;
@@ -49,7 +56,7 @@ class Droplet {
 		ctx.fillStyle = "#6b98e0";
 		ctx.fill();
 		ctx.closePath();
-		
+
 
 	}
 
