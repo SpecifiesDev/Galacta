@@ -4,17 +4,14 @@
 var interval;
 
 var droplets = [];
+var canvas = document.getElementById("rainCanv");
+var ctx = canvas.getContext("2d");
 
 // Population size of droplets
 var size = 1500;
 
 
 function rainInit() {
-
-	// Set up the canvas.
-	var canvas = document.getElementById("rainCanv");
-	var ctx = canvas.getContext("2d");
-
 	// Subtract 10 to remove buffer
 	ctx.canvas.width = window.innerWidth - 10;
 	ctx.canvas.height = window.innerHeight - 10;
@@ -28,12 +25,8 @@ function rainInit() {
 
 function rainDroplets() {
 
-	// I could've created global vars but meh, this will do
-	var canvas = document.getElementById("rainCanv");
-	var cont = canvas.getContext("2d");
-
 	// Clear every frame
-	cont.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 	// Populate array upon first run.
 	for(var i = 0; i < size; i++) {
@@ -41,7 +34,7 @@ function rainDroplets() {
 			break;
 		}
 		// We randomize death height to create a natural removal of the rain droplets.
-		droplets.push(new Droplet(returnRandom(1, window.innerWidth - 5), returnRandom(1, window.innerHeight - 10), returnRandom(4, 9), 1, window.innerHeight - returnRandom(1, 10)));
+		droplets.push(new Droplet(returnRandom(1, window.innerWidth - 5), returnRandom(1, window.innerHeight - 10), returnRandom(4, 9), 1, window.innerHeight - returnRandom(1, 10), returnRandom(1, 2)));
 	}
 
 	/* First check if the droplet is "dead", basically off of the screen. If it is, we're going to replace it's value with a new droplet that starts between 1,30
@@ -53,7 +46,7 @@ function rainDroplets() {
 
 		if(drop.isDead) {
 			// Replace value with new droplet starting at top
-			droplets[i] = new Droplet(returnRandom(1, window.innerWidth - 5), returnRandom(1, 30), returnRandom(4, 9), 1, window.innerHeight - returnRandom(1, 10));
+			droplets[i] = new Droplet(returnRandom(1, window.innerWidth - 5), returnRandom(1, 30), returnRandom(4, 9), 1, window.innerHeight - returnRandom(1, 10), returnRandom(1, 2));
 		} else {
 			// Update then draw
 			drop.update();
