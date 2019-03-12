@@ -29,7 +29,7 @@ class Droplet {
 		if(this.v == 7 || this.v == 6){
 			this.d = 1.5;
 		} else if(this.v == 4 || this.v == 5) {
-			this.d = 2.25;
+			this.d = 2;
 		}
 	}
 

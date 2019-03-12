@@ -10,11 +10,12 @@
     <canvas id = "rainCanv"></canvas>
     <!-- Program Dependencies-->
 
-    <!-- Utility file -->
-    <script src = "./source/core/Utils.js"></script>
-
     <!--GameState enum -->
     <script src = "./source/core/GameState.js"></script>
+
+
+    <!-- Utility file -->
+    <script src = "./source/core/Utils.js"></script>
 
     <!-- Droplets class -->
     <script src = "./source/core/Droplet.js"></script>
@@ -22,12 +23,18 @@
     <!-- Main loop for animating rain -->
     <script src = "./source/core/Rain.js"></script>
 
+    <!-- Login Script that also holds data about logged in user -->
+    <script src = "./source/core/Login.js"></script>
+
+    <!-- Handler script -->
+    <script src = "./source/core/Handlers.js"></script>
+
     <!-- Main game Engige -->
     <script src="./source/core/Main.js"></script>
     <!-- Script loads and start ups -->
 
     <!-- Rain song audio -->
-    <audio src = "./source/core/Resources/Audio/homescreen.mp3" id = "rainAudio"></audio>
+    <audio src = "./source/core/resources/audio/homescreen.mp3" id = "rainAudio"></audio>
     <script>
 
       // When our content loads, we initiate the game
@@ -43,23 +50,20 @@
   <body>
 
     <!-- Main Page // Will be removed and replaced by canvas once start has been clicked -->
-    <div id="LoginDiv">
+    <h1 id = "head">GALACTA</h1>
+    <button id="adventure"> S T A R T </button>
 
-      <div id="LoginBox">
-
-        <h1 id = "head">GALACTA</h1>
-
-        <div id="TextBox">
-          <p id="PasswordText">Password</p>
-          <input id="UserPassword"></input>
+    <div id = "loginForm">
+        <div id ="TextBox">
+          <p id = "UsernameText">Username</p>
+          <input id = "Username"></input>
+          <p id = "PasswordText">Password</p>
+          <input id = "Password" type = "password"></input>
+          <p></p>
+          <button id="login" onclick="Login()"> Login </button>
         </div>
-
-      </div>
-
-
+        <p id = "tryAgain">Try Again!</p>
     </div>
-
-
 
 
 

@@ -3,8 +3,8 @@
 // Gamestate enumerator.
 
 var GameState = {
-	LOGIN: false, // When we start writing the login solution, we need to set this to true first.
-	HOME: true,
+	LOGIN: true, // When we start writing the login solution, we need to set this to true first.
+	HOME: false,
 	PLAY: false,
 	END: false
 }

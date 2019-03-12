@@ -3,41 +3,61 @@ body {
 }
 
 
+#Login {
 
-#LoginBox {
+	color: white;
+	background-color: grey;
+	border-radius: 12px;
+
+}
+
+#tryAgain {
+	color: red;
+	font-size: 10px;
+	visibility: hidden;
+}
+
+#loginForm {
 	background-color: black;
 	color: white;
 	width: 20%;
 	height: 40%;
 	margin-left: 40%;
-	margin-top: 15%;
+	margin-top: -15%;
 	position: relative;
-	z-index: 2;
+	z-index: 3;
+}
+
+
+#TextBox {
+	font-family: "Roboto", serif;
+}
+
+#Username {
+	color: white;
+	width: 85%;
+	height: 30px;
+	background-color: grey;
+	border: none;
+}
+
+#Password {
+	color: white;
+	width: 85%;
+	height: 30px;
+	background-color: grey;
+	border: none;
 }
 
 #head {
 	text-align: center;
 	color: white;
+	margin-top: 300;
 	font-family: "Roboto", serif;
 	font-size: 40px;
+	position: relative;
+	z-index: 2;
 }
-
-#TextBox{
-
-	margin-left: 10%;
-	font-family: "Roboto", serif;
-
-}
-
-#UserPassword{
-
-	width: 85%;
-	height: 30px;
-	color: white;
-	background-color: grey;
-	border: none;
-}
-
 #adventure {
 	display: block;
 

@@ -25,14 +25,18 @@ class Game {
   init() {
 
 
-    
+
     // Check if the screen is still located at home, if it is start a loop to animate the canvas for rain.
+    if(GameState.LOGIN) {
+
+      // We hide the elements while we're in game state login upon initalization
+      document.getElementById("head").style.visibility = "hidden";
+      document.getElementById("adventure").style.visibility = "hidden";
+
+    }
     if(GameState.HOME) {
-
+      document.getElementById("loginForm").style.display = "none";
       rainInit();
-
-    } else {
-      // Testing purpose. Start game automatically. The "Start" button will be the actual call to start a function that deals with animation.
     }
 
   }
