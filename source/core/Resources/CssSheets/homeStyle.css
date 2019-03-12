@@ -3,15 +3,41 @@ body {
 }
 
 
-#head {
-	text-align: center;
+
+#LoginBox {
+	background-color: black;
 	color: white;
-	margin-top: 300;
-	font-family: "Roboto", serif;
-	font-size: 40px;
+	width: 20%;
+	height: 40%;
+	margin-left: 40%;
+	margin-top: 15%;
 	position: relative;
 	z-index: 2;
 }
+
+#head {
+	text-align: center;
+	color: white;
+	font-family: "Roboto", serif;
+	font-size: 40px;
+}
+
+#TextBox{
+
+	margin-left: 10%;
+	font-family: "Roboto", serif;
+
+}
+
+#UserPassword{
+
+	width: 85%;
+	height: 30px;
+	color: white;
+	background-color: grey;
+	border: none;
+}
+
 #adventure {
 	display: block;
 
