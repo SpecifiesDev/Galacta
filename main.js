@@ -12,9 +12,7 @@ const CreateWindow = () => {
 
   MainWindow = new BrowserWindow({
     frame: true,
-    fullscreen: false,
-    width: 1280,
-    height: 720
+    fullscreen: true
   });
 
   MainWindow.loadURL(require('url').format({
