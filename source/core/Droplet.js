@@ -16,7 +16,7 @@ class Droplet {
 		/* If the value exceends / = 80, the droplet initializes with swaying.
 		*	The real reason we add a chance is to try and create a natural effect.
 		* If all of them sway, or too many sway, the regression is noticable.
-		* By adding chance we creating a "wind" effect without overdoing the swaying.
+		* By adding chance we create a "wind" effect without overdoing the swaying.
 		*/
 		if(chance >= .80){
 			this.r = 0;
@@ -25,11 +25,14 @@ class Droplet {
 			this.sway = false;
 		}
 
-		// To give a more natural look to the rain particles, slower moving particles will now be bigger.
-		if(this.v == 7 || this.v == 6){
+		// Natural look : faster moving particles are bigger, while smaller ones are smaller
+		if(this.v == 8 || this.v == 9) {
+			this.d = 2;
+		}
+		else if(this.v == 7 || this.v == 6){
 			this.d = 1.5;
 		} else if(this.v == 4 || this.v == 5) {
-			this.d = 2;
+			this.d = 1;
 		}
 	}
 
@@ -39,7 +42,7 @@ class Droplet {
 	update() {
 		this.y += this.v;
 
-		// Use sine regression to alternate the position of a droplet. Creates a way effect.
+		// Use sine regression to alternate the position of a droplet. Creates a sway effect.
 		if(this.sway == true){
 			this.x += Math.sin(this.r * (1/8));
 			this.r += Math.PI / 6;

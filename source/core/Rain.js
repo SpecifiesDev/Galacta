@@ -10,8 +10,6 @@ var droplets = [];
 var canvas = document.getElementById("rainCanv");
 var ctx = canvas.getContext("2d");
 
-// Boolean over if we've "forced" an interaction, so audio elems can play.
-var forced = false;
 
 // Population size of droplets
 var size = 1500;

@@ -26,7 +26,7 @@ function Login() {
 	* When we release into beta / release
 	* There will be more to this.
 	*/
-	if(!(user.toLowerCase() == universalUser) && !(password == universalPass)) {
+	if(!(user.toLowerCase() == universalUser) || !(password == universalPass)) {
 		document.getElementById("tryAgain").style.visibility = "visible";
 	} else if(user.toLowerCase() == universalUser && password == universalPass) {
 		loggedIn = user;
@@ -44,9 +44,9 @@ function startHome() {
 	document.getElementById("loginForm").style.display = "none";
 
 	// Set our hidden elements to visible, when we switch to the main game canvas, we can completely remove these like we did above
-    document.getElementById("head").style.visibility = "visible";
-    document.getElementById("adventure").style.visibility = "visible";
+  document.getElementById("head").style.visibility = "visible";
+  document.getElementById("adventure").style.visibility = "visible";
 
-    // Start the rain 
-    rainInit();
+  // Start the rain
+  rainInit();
 }
