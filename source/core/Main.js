@@ -41,6 +41,35 @@ class Game {
 
   }
 
+  clear() {
+    if(GameState.HOME) {
+      clearInterval(interval);
+
+      // Call rain elem
+      var elem = document.getElementById("rainAudio");
+
+      // Pause and set to 0
+      elem.pause();
+      elem.currentTime = 0;
+
+      //Remove the background canvas and elements
+      document.getElementById("head").style.display = "none";
+      document.getElementById("adventure").style.display = "none";
+      document.getElementById("rainCanv").style.display = "none";
+
+      // set up our animate loop and scene
+
+      //main scene
+      setScene();
+
+      // animate loop
+      setup();
+
+      GameState.PLAY = true;
+      GameState.HOME = false;
+    }
+  }
+
 
 
 

@@ -10,9 +10,17 @@
     <canvas id = "rainCanv"></canvas>
     <!-- Program Dependencies-->
 
+    <!-- Three.JS -->
+    <script src = "https://threejs.org/build/three.js"></script>
+     
     <!--GameState enum -->
     <script src = "./source/core/GameState.js"></script>
 
+    <!-- Renderer to set up the renderer / loop -->
+    <script src = "./source/core/Engine/render.js"></script>
+
+    <!-- Script to set up the main scene -->
+    <script src = "./source/core/Engine/scenes/mainscene.js"></script>
 
     <!-- Utility file -->
     <script src = "./source/core/Utils.js"></script>
@@ -51,7 +59,7 @@
 
     <!-- Main Page // Will be removed and replaced by canvas once start has been clicked -->
     <h1 id = "head">GALACTA</h1>
-    <button id="adventure"> S T A R T </button>
+    <button id="adventure" onclick = "new Game().clear();"> S T A R T </button>
 
     <div id = "loginForm">
         <div id ="TextBox">

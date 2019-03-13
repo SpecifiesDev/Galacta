@@ -36,12 +36,12 @@ function Login() {
 }
 function startHome() {
 
-	// Change our gamestate
-	GameState.LOGIN = false;
-	GameState.HOME = true;
+  // Change our gamestate
+  GameState.LOGIN = false;
+  GameState.HOME = true;
 
-	// Completely remove our login form from the stack, as we will never use it again in this session
-	document.getElementById("loginForm").style.display = "none";
+  // Completely remove our login form from the stack, as we will never use it again in this session
+  document.getElementById("loginForm").style.display = "none";
 
 	// Set our hidden elements to visible, when we switch to the main game canvas, we can completely remove these like we did above
   document.getElementById("head").style.visibility = "visible";
