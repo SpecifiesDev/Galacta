@@ -4,7 +4,6 @@ body {
 
 
 #Login {
-
 	color: black;
 	background-color: grey;
 	border-radius: 12px;
@@ -15,9 +14,13 @@ body {
 	color: red;
 	font-size: 10px;
 	visibility: hidden;
+	padding-bottom: 2px;
 }
 
 #loginForm {
+	border-radius: 12px;
+	border: 2px solid #d1d3d6;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	background-color: black;
 	color: white;
 	width: 20%;
@@ -62,15 +65,13 @@ body {
 }
 #adventure {
 	display: block;
-
 	margin: 0 auto;
-
-    border: none;
-    font-size: 24px;
-    margin-top: 2;
-    color: white;
-    background-color: black;
-    position: relative;
+  border: none;
+  font-size: 24px;
+  margin-top: 2;
+  color: white;
+  background-color: black;
+  position: relative;
 	z-index: 2;
 }
 

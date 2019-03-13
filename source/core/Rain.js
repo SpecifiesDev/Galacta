@@ -16,19 +16,18 @@ var size = 1500;
 
 
 function rainInit() {
-	// Subtract 10 to remove buffer
-	ctx.canvas.width = window.innerWidth - 10;
-	ctx.canvas.height = window.innerHeight - 10;
-
-
 	// Create a variable containing an interval that runs the rain code. We place it in a variable so we can clear the interval whenever the user presses start. Runs at 60 frames.
 	interval = setInterval(function() {
 		rainDroplets();
 	}, 1000 / 60);
-
 }
 
 function rainDroplets() {
+
+	// Subtract 10 to remove buffer, we do it constantly so whenever the window is updated, we take that value into account.
+	ctx.canvas.width = window.innerWidth - 10;
+	ctx.canvas.height = window.innerHeight - 10;
+
 	// Get instance of our rainElem rainAudio
 	var rainElem = document.getElementById("rainAudio");
 
