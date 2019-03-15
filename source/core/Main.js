@@ -8,23 +8,23 @@
 */
 
 
-/*
-  -== CLASS Game ==-
-    -== Details ==-
-      -- the head of the game, will start all child processes such as rendering, model loading etc etc
-      -- Called by init()
-
-      -== Functions ==-
-        init()
-        -
-*/
-
 class Game {
+
+  /**
+  * @variable {Engine} class.Engine - The engine for the game /core/Engine/EngineCore
+  *
+  * @function {null} init - Initializes the home screen
+  * @function {null} StartGame - Get rid of menu, and start engine
+  **/
+
+  constructor(){
+
+    this.Engine; //Init for later
+
+  }
 
 
   init() {
-
-
 
     // Check if the screen is still located at home, if it is start a loop to animate the canvas for rain.
     if(GameState.LOGIN) {
@@ -41,11 +41,12 @@ class Game {
 
   }
 
-  clear() {
+  StartGame() {
     if(GameState.HOME) {
+
+      //Get Rid of rain
       clearInterval(interval);
 
-      // Call rain elem
       var elem = document.getElementById("rainAudio");
 
       // Pause and set to 0
@@ -57,16 +58,12 @@ class Game {
       document.getElementById("adventure").style.display = "none";
       document.getElementById("rainCanv").style.display = "none";
 
-      // set up our animate loop and scene
-
-      //main scene
-      setScene();
-
-      // animate loop
-      setup();
-
+      //Hand off to the renderer
       GameState.PLAY = true;
       GameState.HOME = false;
+      
+      this.Engine = new Engine();
+      this.Engine.init();
     }
   }
 
