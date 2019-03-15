@@ -29,7 +29,7 @@ class PlayerControl{
 
     //Create the pointer lock
     this.PointerLockControl = new THREE.PointerLockControls(Galacta.Engine.Camera);
-    this.Player.Obj = this.PointerLockControl.getObject()
+    this.Player.Obj = this.PointerLockControl.getObject();
 
     //Add the Camera to the scene
     Galacta.Engine.AddObject(this.Player.Obj);
