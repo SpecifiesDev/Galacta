@@ -14,15 +14,19 @@
 
     <!-- Player class -->
     <script src = "./source/core/Engine/Objects/Player.js"></script>
+    <script src = "./source/core/Engine/Objects/PlayerControl.js"></script>
 
     <!-- Three.JS -->
     <script src = "https://threejs.org/build/three.js"></script>
-
+    <script src="https://threejs.org/examples/js/controls/PointerLockControls.js"></script>
     <!--GameState enum -->
     <script src = "./source/core/GameState.js"></script>
 
-    <!-- Renderer to set up the renderer / loop -->
+    <!-- Engine and its resource -->
+    <script src = "./source/core/Engine/Engine.js"></script>
     <script src = "./source/core/Engine/Render.js"></script>
+    <script src = "./source/core/Engine/Lighting.js"></script>
+
 
     <!-- Script to set up the main scene -->
     <script src = "./source/core/Engine/scenes/Mainscene.js"></script>
@@ -54,7 +58,7 @@
       document.addEventListener("DOMContentLoaded", function() {
         Galacta = new Game();
         Galacta.init();
-      })
+      });
 
     </script>
   </head>
@@ -64,7 +68,7 @@
 
     <!-- Main Page // Will be removed and replaced by canvas once start has been clicked -->
     <h1 id = "head">GALACTA</h1>
-    <button id="adventure" onclick = "new Game().clear();"> S T A R T </button>
+    <button id="adventure" onclick = "Galacta.StartGame();"> S T A R T </button>
 
     <div id = "loginForm">
         <div id ="TextBox">
