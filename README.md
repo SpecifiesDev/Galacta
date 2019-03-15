@@ -8,7 +8,7 @@ A new world.
 <br>
 <b> Username: cqb5 </b>
 <br>
-<i> Password: misandryisokay </i>
+Password: misandryisokay 
 <br>
 <br>
 <br>
