@@ -1,24 +1,27 @@
 // Player.js
-
-// upon game start, we create a player instance with starting values
-
+/**
+* It's 4:30 I'M SO TIRED
+* -== Player ==-
+*		This class is meant to sit under the PlayerControl class, so it can store data ]
+*		relevant to the user, along with the model data and
+*		anything else we deem is nessiary. I may just get rid of this class, and combine it
+*		with the aformentioned class.
+*		-== Variables ==-
+*			@vairable Obj {Object3D} - Contains the 3d Object that represents the player. Changing it's location will change the camera location
+*			@vairable name {String} - Name of player - Dunno why it's here ask austin
+*			@vairable health {int} - Hp pool - again ask austin
+*
+*		-== Functions ==-
+*			@Function Update {null} - Presumably updates stats
+*			@Function Stats {null} - Formats stats?
+*			@Function Damage {null} - Edits hp pool
+*
+**/
 
 class Player {
 
-	constructor(x, y, z, name) {
-
-		// Cursor of keys pressed.
-		this.cursor = {
-			"W": false,
-			"A": false,
-			"S": false,
-			"D": false
-		}
-
-		// x y z coords
-		this.x = x;
-		this.y = y;
-		this.z = z;
+	constructor(name) {
+		this.Obj;
 
 		// name to reference
 		this.name = name;
@@ -28,23 +31,19 @@ class Player {
 
 	}
 
-	update() {
+	Update() {
 		// Update whatever we need to
 	}
 
-	move() {
-		// after update, we move
-	}
-
-	stats() {
+	Stats() {
 		// grab stats of a player
 	}
 
 	// perform damage calculation to the player
-	damage(amount) {
+	Damage(amount) {
 		// Since we don't want negative health, we check
 		if(this.health -= amount < 0) {
-			console.error("Error, called too much damage to Player object. Player.js:45");
+			console.error("Error, called too much damage to Player object. Player.js:46");
 		} else if(this.health -= amount > 0) {
 			this.health -= amount;
 		}
