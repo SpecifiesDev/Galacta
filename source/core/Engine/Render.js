@@ -26,6 +26,15 @@ class Renderer{
 		this.RObj.setSize(window.innerWidth - 10, window.innerHeight - 20);
 		document.body.appendChild(this.RObj.domElement);
 
+
+		// If the window gets resized, we will update the size of the renderer and update the cameras aspect ratio
+		window.addEventListener('resize', onWindowResize, false);
+
+		function onWindowResize() {
+			Galacta.Engine.Camera.aspect = window.innerWidth / window.innerHeight;
+			Galacta.Engine.Camera.updateProjectionMatrix();
+			Galacta.Engine.Renderer.RObj.setSize(window.innerWidth - 10, window.innerHeight - 20);
+		}
 	}
 
 	animate() {
