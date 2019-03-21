@@ -1,4 +1,6 @@
 const electron = require('electron');
+const execFile = require('child_process').execFile;
+const child = null;
 
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
@@ -15,11 +17,7 @@ const CreateWindow = () => {
     fullscreen: true
   });
 
-  MainWindow.loadURL(require('url').format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true
-  }));
+  MainWindow.loadURL('http://127.0.0.1:2000');
 
   MainWindow.on('closed', () => {
     mainWindow = null;
@@ -29,5 +27,6 @@ const CreateWindow = () => {
 
 
 app.on('ready', function(){
-    CreateWindow();
+  child = execFile('node', ['server.js']);
+  CreateWindow();
 });
