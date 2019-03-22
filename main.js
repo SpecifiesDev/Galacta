@@ -20,6 +20,7 @@ const CreateWindow = () => {
   MainWindow.loadURL('http://127.0.0.1:2000');
 
   MainWindow.on('closed', () => {
+    child.kill();
     mainWindow = null;
   });
 
