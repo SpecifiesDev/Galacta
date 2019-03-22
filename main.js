@@ -1,6 +1,6 @@
 const electron = require('electron');
-const execFile = require('child_process').execFile;
-const child = null;
+const { spawn } = require('child_process');
+const child = spawn('node', ['server.js']);
 
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
@@ -27,6 +27,5 @@ const CreateWindow = () => {
 
 
 app.on('ready', function(){
-  child = execFile('node', ['server.js']);
   CreateWindow();
 });
