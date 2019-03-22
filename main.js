@@ -27,5 +27,10 @@ const CreateWindow = () => {
 
 
 app.on('ready', function(){
+
+  child.stdout.on('data', (data) => {
+    console.log(`Child: ${data}`);
+  });
+
   CreateWindow();
 });
