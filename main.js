@@ -12,7 +12,7 @@ const createWindow = () => {
     nodeIntegration: true
   });
 
-  mainWindow.loadFile(path.join(__dirname, "/index.html"));
+  mainWindow.loadFile(path.join(__dirname, "/start.html"));
 
   mainWindow.on('closed', () => {
     mainWindow = null;
@@ -24,4 +24,5 @@ const createWindow = () => {
 
 app.on('ready', () => {
   createWindow();
+  
 });
