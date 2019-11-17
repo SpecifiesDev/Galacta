@@ -18,6 +18,8 @@ const createWindow = () => {
     mainWindow = null;
   });
 
+  //mainWindow.setMenu(null);
+
 }
 
 

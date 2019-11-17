@@ -2,10 +2,8 @@
 
   <!--Imports and start ups -->
   <head>
-    <!-- Style -->
-    <link rel = "stylesheet" href = "./source/core/Resources/sheets/loginStyle.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link rel = "icon" href = "./source/core/Resources/Images/icon.png">
+    
+    
   
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,16 +15,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
+    <link rel = "stylesheet" href = "./source/core/assets/sheets/loginStyle.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
 
 
 
-    <!-- Utility file -->
-    <script src = "./source/core/Utils.js"></script>
 
 
     <!-- Login Script that also holds data about logged in user -->
-    <script src = "./source/core/Login.js"></script>
+    <script src = "./source/core/assets/js/login.js"></script>
 
 
 
@@ -34,6 +32,14 @@
 
   <!-- HTML elements -->
   <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <ul class = "navbar-nav ml-auto">
+          <svg id="exitButton" height="16" width="16">
+              <circle cx="8"cy="8" r="8" stroke-color="red" width='3' fill="red" />
+          </svg>
+      </ul>
+    </nav>
+
 
     <div style = "padding-top: 5px; padding-left: 10px; padding-right: 10px;">
       <div class="alert alert-danger alert-dismissible fade show" id = "alertDiv" role="alert">
@@ -49,9 +55,9 @@
     <div class="login-form" id = "login-form">
        <form>
           <div class="avatar">
-             <img src="./assets/images/member.png" alt="Avatar">
+             <img src="./source/core/assets/images/member.png" alt="Avatar">
           </div>
-          <h2 class="text-center">User Login</h2>
+          <h2 class="text-center">Beta Login</h2>
           <div class="form-group">
              <input type="text" class="form-control" name="username" placeholder="Username" required="required">
           </div>
@@ -63,9 +69,9 @@
           </div>
        </form>
     </div>
-    
+
     <footer id="sticky-footer" class="navbar fixed-bottom py-4 bg-dark text-white-50">
-        <a href = "#" id = "github-footer"><img src = "./assets/images/github.jpg" width = "25" height = "25" class = "navbar-github"></img></a>
+        <a href = "#" id = "github-footer"><img src = "./source/core/assets/images/github.jpg" width = "25" height = "25" class = "navbar-github"></img></a>
      </footer>
 
 
