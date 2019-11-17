@@ -7,11 +7,12 @@
     "type": "git",
     "url": "https://github.com/specifiesdev/galacta"
   },
-  "author": "SpecifiesDev / THoward02",
+  "author": "SpecifiesDev / THoward02 / Carson21",
   "license": "MIT",
   "dependencies": {
     "electron": "^3.1.6",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "jquery": "^3.4.1"
   },
   "scripts": {
     "start": "electron ."

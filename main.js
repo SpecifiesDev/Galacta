@@ -1,37 +1,27 @@
-const electron = require('electron');
-const { spawn } = require('child_process');
-const child = spawn('node', ['server.js']);
-
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
-
+const {app, BrowserWindow } = require('electron');
 const path = require('path');
 
-var MainWindow = null;
+var mainWindow = null;
 
 
-const CreateWindow = () => {
+const createWindow = () => {
 
-  MainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     frame: false,
-    fullscreen: true
+    fullscreen: true,
+    nodeIntegration: true
   });
 
-  MainWindow.loadURL('http://127.0.0.1:2000');
+  mainWindow.loadFile(path.join(__dirname, "/index.html"));
 
-  MainWindow.on('closed', () => {
-    child.kill();
+  mainWindow.on('closed', () => {
     mainWindow = null;
   });
 
 }
 
 
-app.on('ready', function(){
 
-  child.stdout.on('data', (data) => {
-    console.log(`Child: ${data}`);
-  });
-
-  CreateWindow();
+app.on('ready', () => {
+  createWindow();
 });
