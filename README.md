@@ -6,10 +6,4 @@ A new world.
 [Demo](https://specifiesdev.github.io/galacta/index)
 
 <br>
-<b> Username: cqb5 </b>
-<br>
-Password: misandryisokay 
-<br>
-<br>
-<br>
-Note that the Beta version of this project is tested in the browser but is fully intended to run using electron. To run this on electron, clone the repo, install the appropriate node modules, and run electron .
+Galacta is an open source game built on the js engine. For the time being it is only planned to run in native web environments, which includes an electron integration later on in the development stages.
