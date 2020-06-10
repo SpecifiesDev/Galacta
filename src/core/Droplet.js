@@ -14,8 +14,8 @@ class Droplet {
 		var chance = Math.random();
 
 		/* If the value exceends / = 80, the droplet initializes with swaying.
-		*	The real reason we add a chance is to try and create a natural effect.
-		* If all of them sway, or too many sway, the regression is noticable.
+		* The real reason we add a chance is to try and create a natural effect.
+		* If all of them sway, or too many sway, the disparity is noticable.
 		* By adding chance we create a "wind" effect without overdoing the swaying.
 		*/
 		if(chance >= .80){

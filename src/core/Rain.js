@@ -1,18 +1,18 @@
 // Rain.js
 
 // global var to clearinterval
-var interval;
+let interval;
 
 // Array containing our droplet objects
-var droplets = [];
+let droplets = [];
 
 // Reference of canvas elem
-var canvas = document.getElementById("rainCanv");
-var ctx = canvas.getContext("2d");
+let canvas = document.getElementById("rainCanv");
+let ctx = canvas.getContext("2d");
 
 
 // Population size of droplets
-var size = 500;
+let size = 500;
 
 
 function rainInit() {
@@ -29,7 +29,7 @@ function rainDroplets() {
 	ctx.canvas.height = window.innerHeight - 10;
 
 	// Get instance of our rainElem rainAudio
-	var rainElem = document.getElementById("rainAudio");
+	let rainElem = document.getElementById("rainAudio");
 
 
 	// I would like to note that the audio will not play until a user interacts with the document.
@@ -46,7 +46,7 @@ function rainDroplets() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 	// Populate array upon first run.
-	for(var i = 0; i < size; i++) {
+	for(let i = 0; i < size; i++) {
 		if(droplets.length > size) {
 			break;
 		}
@@ -58,8 +58,8 @@ function rainDroplets() {
 	* Note that in the first class definition, we define within the bounds of the entire window and in the second we define 1,30. This is because we want it to start
 	* naturally, and then keep spawning from the top. This prevents any gaps.
 	*/
-	for(var i = 0; i < size; i++) {
-		var drop = droplets[i];
+	for(let i = 0; i < size; i++) {
+		let drop = droplets[i];
 
 		if(drop.isDead) {
 			// Replace value with new droplet starting at top
