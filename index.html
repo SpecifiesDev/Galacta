@@ -3,62 +3,31 @@
   <!--Imports and start ups -->
   <head>
     <!-- Style -->
-    <link rel = "stylesheet" href = "./source/core/Resources/CssSheets/homeStyle.css">
+    <link rel = "stylesheet" href = "./src/core/assets/sheets/homeStyle.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link rel = "icon" href = "./source/core/Resources/Images/icon.png">
+    <link rel = "icon" href = "./src/core/assets/images/icon.png">
     <title> Galacta </title>
     <canvas id = "rainCanv"></canvas>
     <!-- Program Dependencies-->
 
-    <!-- Game objects -->
-
-    <!-- Player class -->
-    <script src = "./source/core/Engine/Objects/Player.js"></script>
-    <script src = "./source/core/Engine/Objects/PlayerControl.js"></script>
-
-    <!-- Three.JS -->
-    <script src = "https://threejs.org/build/three.js"></script>
-    <script src="https://threejs.org/examples/js/controls/PointerLockControls.js"></script>
-    <!--GameState enum -->
-    <script src = "./source/core/GameState.js"></script>
-
-    <!-- Engine and its resource -->
-    <script src = "./source/core/Engine/Engine.js"></script>
-    <script src = "./source/core/Engine/Render.js"></script>
-    <script src = "./source/core/Engine/Lighting.js"></script>
-
-
-    <!-- Script to set up the main scene -->
-    <script src = "./source/core/Engine/scenes/Mainscene.js"></script>
-
     <!-- Utility file -->
-    <script src = "./source/core/Utils.js"></script>
+    <script src = "./src/core/Utils.js"></script>
 
     <!-- Droplets class -->
-    <script src = "./source/core/Droplet.js"></script>
+    <script src = "./src/core/Droplet.js"></script>
 
     <!-- Main loop for animating rain -->
-    <script src = "./source/core/Rain.js"></script>
+    <script src = "./src/core/Rain.js"></script>
 
-    <!-- Login Script that also holds data about logged in user -->
-    <script src = "./source/core/Login.js"></script>
-
-    <!-- Handler script -->
-    <script src = "./source/core/Handlers.js"></script>
 
     <!-- Main game Engige -->
-    <script src="./source/core/Main.js"></script>
     <!-- Script loads and start ups -->
 
     <!-- Rain song audio -->
-    <audio src = "./source/core/Resources/Audio/homescreen.mp3" id = "rainAudio"></audio>
+    <audio src = "./src/core/assets/audio/homescreen.mp3" id = "rainAudio"></audio>
     <script>
 
-      // When our content loads, we initiate the game
-      document.addEventListener("DOMContentLoaded", function() {
-        Galacta = new Game();
-        Galacta.init();
-      });
+      rainInit();
 
     </script>
   </head>
@@ -70,24 +39,6 @@
     <h1 id = "head">GALACTA</h1>
     <button id="adventure" onclick = "Galacta.StartGame();"> S T A R T </button>
 
-    <div id = "loginForm">
-        <div id ="TextBox">
-          <p id = "UsernameText">Username</p>
-          <input id = "Username"></input>
-          <p id = "PasswordText">Password</p>
-          <input id = "Password" type = "password"></input>
-          <p></p>
-          <button id="login" onclick="Login()"> Login </button>
-        </div>
-        <p id = "tryAgain">Try Again!</p>
-    </div>
-
-
-    <script>
-    (function() {
-      console.log(localStorage.mainWindow);
-    });
-    </script>
 
   </body>
 
