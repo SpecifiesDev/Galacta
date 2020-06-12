@@ -1,5 +1,21 @@
+let canv = document.getElementById("renderCanvas");
+let engine = new BABYLON.Engine(canv, true);
+
 const init = () => {
 
+    // get a scene
+    let scene = new BABYLON.Scene(engine);
+
+    // camera
+    let camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, new BABYLON.Vector3(0, 0, 5), scene);
+
+    // add draggable controls
+    camera.attachControl(canv, true);
+
+    // establish lights
+    let light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
+    
+    
     // generate the map
     let subx = 1000; // width of map
     let subz = 700; //height of map
@@ -25,8 +41,31 @@ const init = () => {
 
     let subdivisions = 100;
 
-    let terrain = new BABYLON.DyanmicTerrain("t", {mapData: data, mapSubX: subx, mapSubZ: subz, terrainSub: subdivisions}, scene); // will throw an error, we have to create rendering components and player control, just gonna upload this because I'm tired
+    // set a basic material for now
+    let mat = new BABYLON.StandardMaterial("materialGround", scene);
+    mat.diffuseColor = new BABYLON.Color3(0.15, 0.9, 0.25);
+
+    // create the terrain
+    let terrain = new BABYLON.DynamicTerrain("t", {mapData: data, mapSubX: subx, mapSubZ: subz, terrainSub: subdivisions}, scene); 
+
+    terrain.mesh.material = mat;
+
+
+    return scene;
+}
+
+const render = () => {
+
+    let scene = init();
+
+    engine.runRenderLoop(() => {
+        scene.render();
+    });
+
+    window.addEventListener("resize", () => {
+        engine.resize();
+    });
 
 }
 
-init();
+render();
